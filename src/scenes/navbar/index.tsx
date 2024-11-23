@@ -16,6 +16,7 @@ const Navbar = ({selectedPage, isTopOffPage, setSelectedPage}: Props) => {
     const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)")
     const navBarBackground = isTopOffPage ? "" : "bg-primary-100 drop-shadow"
     const [isMenuToggled, setIsMenuToggled] = useState<Boolean>(false)
+  
   return <nav>
     <div className={`${navBarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}>
      <div className={`${flexBetween} mx-auto w-5/6`}>
@@ -38,7 +39,7 @@ const Navbar = ({selectedPage, isTopOffPage, setSelectedPage}: Props) => {
             </div>
             <div className={`${flexBetween} gap-8 `}>
                {/* <p>Sign In</p> */}
-               {/* <ActionButton setSelectedPage={setSelectedPage}>SIGN IN</ActionButton> */}
+               {/* <ActionButton setSelectedPage={setSelectedPage}>SIGN IN</ActionButton>  */}
                <ActionButton setSelectedPage={setSelectedPage}>Become a member</ActionButton>
             </div>
            </div>
@@ -47,7 +48,10 @@ const Navbar = ({selectedPage, isTopOffPage, setSelectedPage}: Props) => {
             <button className="rounded-full bg-secondary-500 p-2"
             onClick={() => setIsMenuToggled(!isMenuToggled)}
             >
+              
               <Bars3Icon className="h-6 w-6 text-white"/>
+              
+              
             </button>
            )}
        </div>
@@ -55,9 +59,11 @@ const Navbar = ({selectedPage, isTopOffPage, setSelectedPage}: Props) => {
     </div>
     {/* MOBILE MENU TOGGLE */}
     {!isAboveMediumScreen && isMenuToggled && (
+    
       <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
          {/* CLOSE ICON */}
          <div className="flex justify-end p-12">
+                      {/* flex justify-end p-12 */}
           <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
           <XMarkIcon className="h-6 w-6 text-gray-400"/>
           </button>
